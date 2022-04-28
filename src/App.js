@@ -6,8 +6,7 @@ class App extends Component {
     return (
       <a-scene>
 
-<a-entity gltf-model={require("./EricGtlf/eric.gltf")} rotation="270 0 0" scale="0.01 0.01 0.01" 
-                                position="0 2.25 0"></a-entity>
+
       </a-scene>
     );
   }
