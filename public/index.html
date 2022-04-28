@@ -1,0 +1,104 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component"></script>
+    <script src="https://unpkg.com/aframe-room-component/dist/aframe-room-component.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.1.0/dist/aframe-extras.min.js"></script>
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <a-scene>
+      <!--<a-assests>
+        <img id="gimg" src="https://cdn.aframe.io/a-painter/images/floor.jpg"></img>
+      </a-assests>-->
+
+
+      <!-- cursor -->
+      <a-camera position=" 0 1 0" >
+        <a-cursor color="#FF6969" fuse="true"></a-cursor>
+      </a-camera>
+
+
+      <!-- Setting up the environment -->
+      <a-entity environment="preset: japan;
+                              seed: 10;
+                              skyType: gradient;
+                              skyColor: #96FF9B;
+                              playArea: 0;
+                              groundYScale: 3;
+                              groundTexture: wood;
+                              groundColor: GREY;
+                              dressing:trees;
+                              dressingAmount: 100;
+                              dressingColor: yellow;
+                              dressingScale: 8;
+                              grid: 1x1;
+                              gridColor: #44F2FF;
+                              "></a-entity>
+
+
+
+
+
+                              <!-- animation -->
+                              <!-- for more information: https://aframe.io/docs/1.3.0/components/animation.html#api_dir -->
+                              <!-- for more information: https://www.youtube.com/watch?v=p3mNNZ356Ko&t=208s -->
+
+
+                                 <!-- animation for the BLUE box with moving -->
+                                <a-box position="1 1 0" 
+                                animation="property: position; to: 3 3 3; dur: 5000; easing: linear; loop: true" color="#0000FF"></a-box> 
+
+                                 <!-- animation for the GREEN sphere with rotation -->
+                                 <a-entity rotation="3 3 3" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+                                  <a-sphere position="5 5 0" color="#00FF00"></a-sphere>
+                                </a-entity> 
+
+                                <!-- animation for the blue box with rotation -->
+                                <a-box position="-1 1 -2" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000" color="#0000FF"> </a-box> 
+
+                                <!-- animation for the yellow box with scaling -->
+                                <a-box position="2 0.5 0" animation="property: scale; to: 0.2 1 5; loop: true;" color="#FFAA00"> </a-box>
+                
+
+                                <!-- animation for the RED box with mouse enter and mouse leave -->
+                                <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
+                                <a-entity
+                                geometry="primitive: box"
+                                material="color: red"
+                                animation__mouseenter="property: position; to: 1 5 1; dur: 5000; easing: linear; loop: true; startEvents: mouseenter;"
+                                animation__mouseleave="property: position; to: 1 1 1; dur: 5000; easing: linear; loop: true; startEvents: mouseleave;">
+                                </a-entity>
+
+
+                                <!-- animation for 3D model (Bird) -->
+                                <!-- source of this mode: https://sketchfab.com/3d-models/bird-7a51fc9ea78d499e980a929ca25a6dba -->
+
+                                <a-entity animation="property: position; to: -3 3 3; dur: 5000; easing: linear; loop: true"
+                                gltf-model="url(https://raw.githubusercontent.com/AmjQarni/V_R/main/bird/scene.gltf)"
+                                scale=".006 .006 .006"
+                                position="0 2 0"
+                                rotation="0 0 0"
+                                ></a-entity>
+
+    
+    
+    
+    
+    </a-scene>
+  </body>
+
+</html>
